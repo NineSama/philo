@@ -6,7 +6,7 @@
 /*   By: mfroissa <mfroissa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 17:04:00 by mfroissa          #+#    #+#             */
-/*   Updated: 2023/04/12 17:12:42 by mfroissa         ###   ########.fr       */
+/*   Updated: 2023/05/10 18:16:51 by mfroissa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	main(int ac, char **av)
 {
-	t_data	*data;
+	t_data	data;
 
-	data = ft_calloc(1, sizeof(data));
-	if (!data)
-		return (1);
+	data = (t_data){0};
 	if (parsing(ac, av))
 		return (2);
-	if (create_data(data, ac, av))
+	if (create_data(&data, ac, av))
 		return (3);
+	if (create_threads(&data))
+		return (4);
 	return (0);
 }

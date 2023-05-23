@@ -1,9 +1,16 @@
-NAME			= philosophers
+NAME			=	philosophers
 
-SRCS			=	main.c \
-					parsing.c \
-					temp.c	\
-					utils.c
+SRCS			=	core/act.c \
+					core/create.c \
+					core/mutex.c \
+					core/parsing.c \
+					threads/check.c \
+					threads/routine.c \
+					threads/threads.c \
+					utils/print.c \
+					utils/time.c \
+					utils/utils.c \
+					main.c
 
 OBJS			= ${SRCS:.c=.o}
 
